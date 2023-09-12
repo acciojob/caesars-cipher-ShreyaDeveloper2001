@@ -33,11 +33,23 @@ const lookup = {
 
 function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
-  // Only change code below this line
+  // Only change code below this line for (let i = 0; i < encodedStr.length; i++) {
+    const char = encodedStr[i];
+	 if (lookup.hasOwnProperty(char)) {
+      // Add the decoded character to the result array
+      decodedArr.push(lookup[char]);
+    } else {
+      // If the character is not in the lookup table, leave it unchanged
+      decodedArr.push(char);
+    }
+  }
 
-  return; //return decodedArr
+  return decodeArr.join(''); //return decodedArr
 }
 
+const encodedString = "SERR YBIR? NPPVBWBO";
+const decodedResult = rot13(encodedString);
+console.log(decodedResult); 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 // console.log(rot13("SERR YBIR? NPPVBWBO"));
